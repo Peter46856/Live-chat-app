@@ -7,7 +7,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["https://wondrous-gecko-51a026.netlify.app/login"],
+    origin: ["https://wondrous-gecko-51a026.netlify.app"],
   },
 });
 
