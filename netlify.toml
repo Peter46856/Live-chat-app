@@ -2,3 +2,8 @@
   base = "frontend"
   publish = "dist"
   command = "npm run build"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://live-chat-app-u70v.onrender.com/api/:splat"
+  status = 200
