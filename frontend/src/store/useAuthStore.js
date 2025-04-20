@@ -4,9 +4,9 @@ import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
 
-const BASE_URL = import.meta.env.MODE === "development"
-  ? "http://localhost:5000"
-  : "https://live-chat-app-u70v.onrender.com";
+const BASE_URL = import.meta.env.VITE_API_URL.replace(/\/api\/?$/, ""); // strip /api for socket.io base
+
+  
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
@@ -99,6 +99,8 @@ export const useAuthStore = create((set, get) => ({
         userId: authUser._id,
       },
     });
+   
+    
     socket.connect();
 
     set({ socket: socket });
